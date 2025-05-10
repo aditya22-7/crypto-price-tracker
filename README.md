@@ -1,7 +1,7 @@
 # crypto-price-tracker
 Real time crypto-currency table. Frontend is built using React.js and Redux. Web sockets are used for real time updations. 
 
-This guide will walk you through setting up the cryptocurrency table application using React, Redux, and plain CSS (no Tailwind required).
+This guide will walk you through setting up the cryptocurrency table application using React, Redux, and plain CSS.
 
 Prerequisites : 
 Node.js (version 14.0.0 or later)
