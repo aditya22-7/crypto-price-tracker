@@ -1,0 +1,293 @@
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #f9fafb;
+}
+
+/* App container */
+.app-container {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.timestamp {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Table styles */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.crypto-table thead{
+    width: 100%;
+}
+
+.crypto-table th,
+.crypto-table td {
+  padding: 16px;
+  text-align: left;
+}
+
+/* Table header fixes */
+.crypto-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Fix icons in headers */
+.crypto-table th.with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.info-icon {
+  color: #9ca3af;
+  cursor: help;
+}
+
+/* Make sure the column widths are appropriate */
+.crypto-table th:first-child {
+  width: 50px;
+}
+
+.crypto-table th:nth-child(2) {
+  width: 180px;
+}
+
+.crypto-table th:last-child {
+  width: 120px;
+}
+
+.crypto-table tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.crypto-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+.crypto-table tr:last-child {
+  border-bottom: none;
+}
+
+/* Alignment classes */
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* Icon styles */
+.info-icon,
+.star-icon,
+.arrow-icon {
+  margin-left: 4px;
+}
+
+.star-icon {
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.star-icon.filled {
+  color: #f59e0b;
+}
+
+/* Coin styling */
+.index-cell {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.coin-cell {
+  display: flex;
+  align-items: center;
+}
+
+.coin-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.coin-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary {
+  font-weight: 500;
+}
+
+.secondary {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Percentage styling */
+.percentage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.percentage.positive {
+  color: #10b981;
+}
+
+.percentage.negative {
+  color: #ef4444;
+}
+
+.percentage.neutral {
+  color: #6b7280;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #b4b5b8;
+  border-radius: 4px;
+}
+
+/* Chart cell */
+.chart-cell {
+  width: 120px;
+}
+
+.trend-chart {
+  width: 100%;
+  height: 40px;
+}
+
+.trend-chart path {
+  stroke-width: 2;
+  fill: none;
+}
+
+.trend-chart.positive path {
+  stroke: #10b981;
+}
+
+.trend-chart.negative path {
+  stroke: #ef4444;
+}
+
+.trend-chart.neutral path {
+  stroke: #9ca3af;
+}
+
+/* Value transition styles */
+.value-cell {
+  transition: color 1.5s ease;
+  color: #333;
+}
+
+.value-cell.increased {
+  color: #10b981;
+  animation: fadeToNormal 1.5s ease-out;
+}
+
+.value-cell.decreased {
+  color: #ef4444;
+  animation: fadeToNormal 1.5s ease-out;
+}
+
+@keyframes fadeToNormal {
+  0% {
+    font-weight: bold;
+  }
+  80% {
+    font-weight: bold;
+  }
+  100% {
+    font-weight: normal;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .crypto-table th,
+  .crypto-table td {
+    padding: 12px 8px;
+  }
+  
+  .crypto-table th {
+    font-size: 14px;
+  }
+  
+  .coin-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  .chart-cell {
+    width: 80px;
+  }
+}
