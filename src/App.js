@@ -6,6 +6,8 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import SocketHandler from "./socketHandler";
 import "./CryptoTable.css";
 
+console.log("Hello, from App.js");
+
 const initialState = {
 	Name: [
 		"Bitcoin BTC",
